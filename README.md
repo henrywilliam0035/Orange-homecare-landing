@@ -1,10 +1,13 @@
-# Orange Homecare Landing Page
+# Orange Homecare Landing Page (MVP)
 
-MVP landing page for Orange Homecare and Gleam Dish Wash.
+This is a minimal, production-safe React + Vite landing page for Orange Homecare.
 
-## How to run locally
+## Requirements
+- Node.js 18 or higher
+
+## Run locally
 npm install
 npm run dev
 
-## Goal
-Validate demand for refill-based dishwashing liquid.
+## Build for production
+npm run build
