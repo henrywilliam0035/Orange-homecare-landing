@@ -12,6 +12,103 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
+}
+
+// Order Form Submission
+const orderForm = document.getElementById('orderForm');
+if (orderForm) {
+    orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            fullName: document.getElementById('fullName').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
+            plan: document.getElementById('plan').value,
+            city: document.getElementById('city').value,
+            quantity: document.getElementById('quantity').value,
+            address: document.getElementById('address').value,
+            message: document.getElementById('message').value
+        };
+
+        // Create WhatsApp message
+        const whatsappMessage = `*New Order from Website*
+        
+*Name:* ${formData.fullName}
+*Phone:* ${formData.phone}
+*Email:* ${formData.email}
+*Plan:* ${formData.plan}
+*City:* ${formData.city}
+*Quantity:* ${formData.quantity}
+*Delivery Address:* ${formData.address}
+*Additional Notes:* ${formData.message || 'None'}`;
+
+        const whatsappURL = `https://wa.me/2348134566721?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Show confirmation
+        alert('Thank you for your order! You will be redirected to WhatsApp to complete your order.');
+        
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form
+        orderForm.reset();
+    });
+}
+
+// Contact Form Submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            phone: document.getElementById('contactPhone').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('contactMessage').value
+        };
+
+        // Create WhatsApp message
+        const whatsappMessage = `*New Contact Message*
+        
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Phone:* ${formData.phone || 'Not provided'}
+*Subject:* ${formData.subject}
+*Message:* ${formData.message}`;
+
+        const whatsappURL = `https://wa.me/2348134566721?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Show confirmation
+        alert('Thank you for contacting us! You will be redirected to WhatsApp.');
+        
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
@@ -46,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Add hover effect to cards
-const cards = document.querySelectorAll('.feature-card, .pricing-card');
+const cards = document.querySelectorAll('.feature-card, .pricing-card, .value-card, .step-card');
 cards.forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.transform = 'translateY(-8px)';
