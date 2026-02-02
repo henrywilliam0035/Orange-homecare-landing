@@ -145,21 +145,48 @@ h1, h2, h3 {
 .before-after {
     margin-top: 3rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.image-placeholder {
-    background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
-    border-radius: 12px;
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    border: 2px dashed #ccc;
+.image-container {
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
 }
 
-.image-placeholder p {
-    font-size: 1.2rem;
-    color: #888;
-    font-weight: 500;
+.image-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.dishwashing-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.image-container:hover .dishwashing-image {
+    transform: scale(1.03);
+}
+
+/* Add subtle border for depth */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(255, 87, 34, 0.3);
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ===== FEATURES SECTION ===== */
@@ -373,6 +400,10 @@ h1, h2, h3 {
         margin-right: 0;
         margin-bottom: 1rem;
     }
+
+    .image-container {
+        border-radius: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -401,6 +432,10 @@ h1, h2, h3 {
     .pricing-card {
         padding: 2rem 1.5rem;
     }
+
+    .image-container {
+        border-radius: 12px;
+    }
 }
 
 /* ===== ANIMATIONS ===== */
@@ -422,4 +457,20 @@ h1, h2, h3 {
 .testimonials-section,
 .cta-section {
     animation: fadeInUp 0.8s ease-out;
+}
+
+/* Image loading animation */
+@keyframes imageReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dishwashing-image {
+    animation: imageReveal 0.8s ease-out;
 }
