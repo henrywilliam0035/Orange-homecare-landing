@@ -3,240 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gleam Dish Wash - Our eco-friendly, refillable dish washing solution.">
+    <meta name="description" content="Gleam Dish Wash - Premium eco-friendly dish washing solution. Cuts grease in seconds, gentle on hands, refillable bottles.">
     <title>Products - Orange Homecare</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
-                    <span class="logo-text">Orange Homecare</span>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="product.html" class="nav-link active">Products</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="contact.html#order" class="nav-link cta-nav">Order Now</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="product.html" class="nav-link active">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html#order" class="nav-link cta-nav">Order Now</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Gleam Dish Wash</h1>
-            <p class="page-subtitle">The Eco-Friendly Cleaning Revolution</p>
-        </div>
-    </section>
-
-    <!-- Product Hero Section -->
+    <!-- PRODUCT HERO -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-grid">
-                <div class="product-image-section">
-                    <div class="image-container">
-                        <img src="dishwashing-image.png" alt="Gleam Dish Wash in action" class="product-main-image">
-                    </div>
-                </div>
-                <div class="product-info-section">
-                    <h2>Gleam Dish Wash</h2>
+            <div class="product-hero-content">
+                <div class="product-hero-text">
+                    <h1 class="page-title">Gleam Dish Wash</h1>
                     <p class="product-tagline">Cuts Grease in Seconds. Gentle on Hands. Easy on Your Pocket.</p>
-                    <div class="product-features-list">
-                        <div class="product-feature-item">
-                            <span class="checkmark">✓</span>
-                            <span>NAFDAC Certified & Safe</span>
-                        </div>
-                        <div class="product-feature-item">
-                            <span class="checkmark">✓</span>
-                            <span>Eco-Friendly Formula</span>
-                        </div>
-                        <div class="product-feature-item">
-                            <span class="checkmark">✓</span>
-                            <span>Refillable System</span>
-                        </div>
-                        <div class="product-feature-item">
-                            <span class="checkmark">✓</span>
-                            <span>Powerful Grease Removal</span>
-                        </div>
-                        <div class="product-feature-item">
-                            <span class="checkmark">✓</span>
-                            <span>Gentle on Skin</span>
-                        </div>
-                    </div>
-                    <a href="contact.html#order" class="cta-button primary large-btn">Order Gleam Now</a>
+                    <ul class="product-highlights">
+                        <li>✓ Powerful grease-cutting formula</li>
+                        <li>✓ Non-toxic & dermatologist-friendly</li>
+                        <li>✓ Eco-friendly refillable system</li>
+                        <li>✓ NAFDAC certified</li>
+                        <li>✓ Made in Nigeria</li>
+                    </ul>
+                    <a href="contact.html#order" class="cta-button primary large">Order Now</a>
+                </div>
+                <div class="product-hero-image">
+                    <img src="dishwashing-image.png" alt="Gleam Dish Wash Product" class="product-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
+    <!-- HOW IT WORKS -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">How the Refill System Works</h2>
+            <h2 class="section-title centered">How Our Refill System Works</h2>
+            <p class="section-subtitle centered">Save money and the environment with every refill</p>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Choose Your Plan</h3>
-                    <p>Select Basic (1L), Family (3L), or Business (5L) based on your needs.</p>
+                    <h3>Order Your First Bottle</h3>
+                    <p>Get your premium reusable pump bottle with Gleam Dish Wash</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Receive Your Bottle</h3>
-                    <p>Get your first Gleam bottle delivered to your location in Lagos or Kano.</p>
+                    <h3>Use & Enjoy</h3>
+                    <p>Experience the powerful grease-cutting action of Gleam</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Use & Enjoy</h3>
-                    <p>Experience powerful cleaning that's gentle on your hands and tough on grease.</p>
+                    <h3>Order Refills</h3>
+                    <p>When empty, order affordable refill pouches via WhatsApp</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
-                    <h3>Get Refills</h3>
-                    <p>Keep your bottle, order refills monthly. Save money and reduce plastic waste.</p>
+                    <h3>Save & Repeat</h3>
+                    <p>Save money and reduce plastic waste every time you refill</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section class="pricing-section">
+    <!-- PRODUCT FEATURES -->
+    <section class="product-features">
         <div class="container">
-            <h2 class="section-title">Choose Your Plan</h2>
+            <h2 class="section-title centered">Why Choose Gleam?</h2>
+            <div class="features-detailed">
+                <div class="feature-detail">
+                    <div class="feature-icon-large">🧴</div>
+                    <div class="feature-info">
+                        <h3>Powerful Grease Removal</h3>
+                        <p>Our proprietary formula cuts through even the toughest grease in seconds — palm oil, burnt food, stubborn stains. No more endless scrubbing.</p>
+                    </div>
+                </div>
+                <div class="feature-detail">
+                    <div class="feature-icon-large">🌿</div>
+                    <div class="feature-info">
+                        <h3>Safe & Gentle Ingredients</h3>
+                        <p>Non-toxic, dermatologist-friendly formula that's tough on grease but gentle on your hands. Safe for the whole family, including kids who help with dishes.</p>
+                    </div>
+                </div>
+                <div class="feature-detail">
+                    <div class="feature-icon-large">♻️</div>
+                    <div class="feature-info">
+                        <h3>Eco-Friendly Refillable System</h3>
+                        <p>Our refillable bottles reduce plastic waste by up to 80%. Good for your wallet, great for Nigeria's environment.</p>
+                    </div>
+                </div>
+                <div class="feature-detail">
+                    <div class="feature-icon-large">💰</div>
+                    <div class="feature-info">
+                        <h3>Affordable Quality</h3>
+                        <p>Premium performance at everyday prices. Our refill system means you save even more on every purchase.</p>
+                    </div>
+                </div>
+                <div class="feature-detail">
+                    <div class="feature-icon-large">🏆</div>
+                    <div class="feature-info">
+                        <h3>NAFDAC Certified</h3>
+                        <p>All our products meet the highest safety standards set by NAFDAC. Complete peace of mind for your family.</p>
+                    </div>
+                </div>
+                <div class="feature-detail">
+                    <div class="feature-icon-large">🚚</div>
+                    <div class="feature-info">
+                        <h3>Fast Delivery</h3>
+                        <p>Order via WhatsApp and receive your Gleam within 24-48 hours in Lagos, 3-5 days nationwide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2 class="section-title centered">Our Plans</h2>
+            <p class="section-subtitle centered">Choose the perfect plan for your home or business</p>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Basic</h3>
-                    <p class="pricing-description">1L monthly refill — for small households</p>
-                    <ul class="pricing-features">
-                        <li>1 Liter per month</li>
-                        <li>Perfect for 1-2 people</li>
-                        <li>Reusable bottle included</li>
+                    <h3 class="plan-name">Basic</h3>
+                    <p class="plan-period">Single Bottle</p>
+                    <ul class="plan-features">
+                        <li>500ml Gleam Dish Wash</li>
+                        <li>Reusable pump bottle</li>
+                        <li>Lasts 4-6 weeks</li>
                         <li>Free delivery in Lagos</li>
                     </ul>
-                    <a href="contact.html#order" class="cta-button secondary">Choose Basic</a>
+                    <a href="contact.html#order" class="plan-button">Order Now</a>
                 </div>
-
-                <div class="pricing-card featured">
-                    <div class="featured-badge">Most Popular</div>
-                    <h3 class="pricing-title">Family</h3>
-                    <p class="pricing-description">3L monthly refill — for families</p>
-                    <ul class="pricing-features">
-                        <li>3 Liters per month</li>
-                        <li>Perfect for families of 3-5</li>
-                        <li>Reusable bottle included</li>
-                        <li>Free delivery in Lagos & Kano</li>
+                <div class="pricing-card popular">
+                    <span class="popular-badge">Most Popular</span>
+                    <h3 class="plan-name">Family</h3>
+                    <p class="plan-period">Family Pack</p>
+                    <ul class="plan-features">
+                        <li>3 x 500ml bottles</li>
+                        <li>1 FREE 500ml refill</li>
+                        <li>Best value for families</li>
+                        <li>Free delivery nationwide</li>
                     </ul>
-                    <a href="contact.html#order" class="cta-button secondary">Choose Family</a>
+                    <a href="contact.html#order" class="plan-button">Order Now</a>
                 </div>
-
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Business</h3>
-                    <p class="pricing-description">5L bulk refill — for hotels & restaurants</p>
-                    <ul class="pricing-features">
-                        <li>5+ Liters per month</li>
-                        <li>Bulk pricing available</li>
-                        <li>Multiple bottles included</li>
-                        <li>Priority delivery</li>
+                    <h3 class="plan-name">Business</h3>
+                    <p class="plan-period">Bulk Order</p>
+                    <ul class="plan-features">
+                        <li>12 x 500ml bottles</li>
+                        <li>Perfect for offices/restaurants</li>
+                        <li>Wholesale pricing</li>
+                        <li>Priority support</li>
                     </ul>
-                    <a href="contact.html#order" class="cta-button secondary">Choose Business</a>
+                    <a href="contact.html#order" class="plan-button">Order Now</a>
+                </div>
+            </div>
+
+            <!-- REFILL OPTIONS -->
+            <div class="refill-pricing">
+                <h3 class="refill-title">Refill Options</h3>
+                <div class="refill-grid">
+                    <div class="refill-card">
+                        <p class="refill-size">500ml Refill Pouch</p>
+                        <p class="refill-savings">Eco-friendly refill option</p>
+                    </div>
+                    <div class="refill-card">
+                        <p class="refill-size">1L Refill Pouch</p>
+                        <p class="refill-savings">Best value - fills 2 bottles!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
+    <!-- BENEFITS GRID -->
     <section class="benefits-section">
         <div class="container">
-            <h2 class="section-title">Why Choose Gleam?</h2>
+            <h2 class="section-title centered">The Gleam Advantage</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>💧 Powerful Cleaning</h3>
-                    <p>Specially formulated to cut through Nigerian cooking oils and tough grease instantly.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">⚡</span>
+                    <h4>Fast Acting</h4>
+                    <p>Cuts grease in seconds</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>🤲 Skin-Friendly</h3>
-                    <p>Gentle pH-balanced formula that doesn't dry out or damage your hands.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🤲</span>
+                    <h4>Skin Safe</h4>
+                    <p>Gentle on hands</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>💰 Cost-Effective</h3>
-                    <p>Save up to 40% compared to traditional dish liquids with our refill system.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🌍</span>
+                    <h4>Eco-Friendly</h4>
+                    <p>Reduces plastic waste</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>♻️ Eco-Conscious</h3>
-                    <p>Reduce plastic waste by up to 90% with our reusable bottle system.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">💵</span>
+                    <h4>Affordable</h4>
+                    <p>Premium quality, fair price</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>🇳🇬 Made in Nigeria</h3>
-                    <p>Proudly manufactured in Nigeria, supporting local jobs and economy.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🔬</span>
+                    <h4>Certified</h4>
+                    <p>NAFDAC approved</p>
                 </div>
-                <div class="benefit-card">
-                    <h3>✅ NAFDAC Certified</h3>
-                    <p>Fully certified and approved by Nigerian regulatory authorities.</p>
+                <div class="benefit-item">
+                    <span class="benefit-icon">🇳🇬</span>
+                    <h4>Nigerian Made</h4>
+                    <p>Supporting local</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Start Saving Money & Protecting the Planet</h2>
-            <p class="cta-subtitle">Join the Gleam refill revolution today</p>
-            <a href="contact.html#order" class="cta-button white large-btn">Order Your First Bottle</a>
+            <h2 class="cta-title">Ready to Try Gleam?</h2>
+            <p class="cta-subtitle">Join thousands of satisfied customers across Nigeria</p>
+            <div class="cta-buttons">
+                <a href="contact.html#order" class="cta-button white">Order Now</a>
+                <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I'd%20like%20to%20learn%20more%20about%20Gleam%20Dish%20Wash." class="cta-button outline" target="_blank">Chat on WhatsApp</a>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="footer-logo">
-                    <p class="footer-desc">Eco-friendly cleaning solutions for Nigerian homes and businesses.</p>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Orange Homecare" class="footer-logo-img">
+                    <p class="footer-tagline">Improving lives, one home at a time.</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
                         <li><a href="product.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html#order">Order Now</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>Email: orangehomecareltd@gmail.com</li>
-                        <li>Phone: +234 813 456 6721</li>
-                        <li>Location: Lagos, Nigeria</li>
-                    </ul>
+                    <p>📧 orangehomecareltd@gmail.com</p>
+                    <p>📞 +234 813 456 6721</p>
+                    <p>📍 Lagos, Nigeria</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-text">
-                    Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria
-                </p>
+                <p>Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I'd%20like%20to%20order%20Gleam%20Dish%20Wash." 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 32 32" class="whatsapp-icon">
-            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485-6.050 13.484-13.485 13.484zM21.739 18.13c-0.273-0.137-1.617-0.798-1.867-0.889-0.25-0.091-0.433-0.137-0.617 0.137s-0.708 0.889-0.867 1.073c-0.159 0.182-0.318 0.205-0.591 0.068s-1.155-0.426-2.199-1.357c-0.813-0.725-1.362-1.621-1.521-1.894s-0.017-0.421 0.120-0.557c0.123-0.123 0.273-0.318 0.409-0.478s0.182-0.273 0.273-0.455c0.091-0.182 0.045-0.341-0.023-0.478s-0.617-1.487-0.846-2.036c-0.223-0.534-0.45-0.462-0.617-0.471-0.159-0.008-0.341-0.010-0.524-0.010s-0.478 0.068-0.728 0.341c-0.25 0.273-0.955 0.936-0.955 2.283s0.978 2.648 1.114 2.83c0.137 0.182 1.921 2.933 4.652 4.112 0.649 0.280 1.156 0.448 1.551 0.573 0.652 0.207 1.245 0.178 1.715 0.108 0.524-0.078 1.617-0.661 1.845-1.299s0.228-1.185 0.159-1.299c-0.068-0.114-0.25-0.182-0.523-0.319z"/>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I'm%20interested%20in%20ordering%20Gleam%20Dish%20Wash." 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
