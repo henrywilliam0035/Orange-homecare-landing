@@ -408,20 +408,7 @@ h1, h2, h3 {
     font-size: 2rem;
     font-weight: 700;
     color: #FF5722;
-    margin-bottom: 0.5rem;
-}
-
-.pricing-price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
     margin-bottom: 1rem;
-}
-
-.pricing-price span {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #888;
 }
 
 .pricing-description {
