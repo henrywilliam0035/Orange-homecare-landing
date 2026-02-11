@@ -3,258 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Orange Homecare and order Gleam Dish Wash.">
-    <title>Contact & Order - Orange Homecare</title>
+    <meta name="description" content="Contact Orange Homecare - Order Gleam Dish Wash via WhatsApp or send us a message.">
+    <title>Contact Us - Orange Homecare</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
-                    <span class="logo-text">Orange Homecare</span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="product.html" class="nav-link">Products</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                    <li><a href="contact.html#order" class="nav-link cta-nav active">Order Now</a></li>
-                </ul>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="product.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="#order" class="nav-link cta-nav scroll-link">Order Now</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- PAGE HERO -->
+    <section class="page-hero contact-hero">
         <div class="container">
-            <h1 class="page-title">Get in Touch</h1>
-            <p class="page-subtitle">We're here to help with orders, questions, and support</p>
+            <h1 class="page-title">Contact Us</h1>
+            <p class="page-subtitle">We'd love to hear from you. Order now or send us a message!</p>
         </div>
     </section>
 
-    <!-- Contact Info Section -->
+    <!-- CONTACT INFO CARDS -->
     <section class="contact-info-section">
         <div class="container">
-            <div class="contact-info-grid">
-                <div class="contact-info-card">
+            <div class="contact-cards">
+                <div class="contact-card">
                     <div class="contact-icon">📧</div>
-                    <h3>Email Us</h3>
-                    <p><a href="mailto:orangehomecareltd@gmail.com">orangehomecareltd@gmail.com</a></p>
+                    <h3>Email</h3>
+                    <p>orangehomecareltd@gmail.com</p>
+                    <a href="mailto:orangehomecareltd@gmail.com" class="contact-link">Send Email</a>
                 </div>
-                <div class="contact-info-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>Call Us</h3>
-                    <p><a href="tel:+2348134566721">+234 813 456 6721</a></p>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>+234 813 456 6721</p>
+                    <a href="tel:+2348134566721" class="contact-link">Call Now</a>
                 </div>
-                <div class="contact-info-card">
+                <div class="contact-card highlight">
                     <div class="contact-icon">💬</div>
                     <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/2348134566721" target="_blank">Chat with us</a></p>
+                    <p>Fastest response!</p>
+                    <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!" target="_blank" class="contact-link whatsapp">Chat Now</a>
                 </div>
-                <div class="contact-info-card">
+                <div class="contact-card">
                     <div class="contact-icon">📍</div>
                     <h3>Location</h3>
                     <p>Lagos, Nigeria</p>
+                    <span class="contact-note">Nationwide delivery available</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Order Form Section -->
-    <section class="form-section" id="order">
+    <!-- ORDER FORM SECTION -->
+    <section class="order-section" id="order">
         <div class="container">
             <div class="form-container">
                 <div class="form-header">
-                    <h2>Order Gleam Dish Wash</h2>
-                    <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                    <h2 class="form-title">Order Gleam Dish Wash</h2>
+                    <p class="form-subtitle">Fill out the form below and we'll process your order via WhatsApp</p>
                 </div>
-                <form class="order-form" id="orderForm">
+                <form id="orderForm" class="order-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fullName">Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" required>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone" required placeholder="e.g., 08012345678">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Select Product *</label>
+                            <select id="plan" name="plan" required>
+                                <option value="">Choose a product</option>
+                                <option value="Gleam Dish Wash - Single Bottle">Gleam Dish Wash - Single Bottle</option>
+                                <option value="Gleam Dish Wash - Family Pack">Gleam Dish Wash - Family Pack</option>
+                                <option value="Gleam Dish Wash - Business Pack">Gleam Dish Wash - Business Pack</option>
+                                <option value="Gleam Dish Wash - Refill Pouch">Gleam Dish Wash - Refill Pouch</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="plan">Select Plan *</label>
-                        <select id="plan" name="plan" required>
-                            <option value="">-- Choose a Plan --</option>
-                            <option value="basic">Basic - 1L monthly refill</option>
-                            <option value="family">Family - 3L monthly refill</option>
-                            <option value="business">Business - 5L+ bulk refill</option>
-                        </select>
-                    </div>
-
                     <div class="form-row">
                         <div class="form-group">
                             <label for="city">City *</label>
-                            <select id="city" name="city" required>
-                                <option value="">-- Select City --</option>
-                                <option value="lagos">Lagos</option>
-                                <option value="kano">Kano</option>
-                                <option value="other">Other (Please specify in message)</option>
-                            </select>
+                            <input type="text" id="city" name="city" required placeholder="e.g., Lagos, Abuja, Port Harcourt">
                         </div>
                         <div class="form-group">
                             <label for="quantity">Quantity *</label>
                             <input type="number" id="quantity" name="quantity" min="1" value="1" required>
                         </div>
                     </div>
-
-                    <div class="form-group">
+                    <div class="form-group full">
                         <label for="address">Delivery Address *</label>
-                        <textarea id="address" name="address" rows="3" required></textarea>
+                        <textarea id="address" name="address" required placeholder="Enter your full delivery address including street, area, and any landmarks"></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Additional Notes</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Special requests, preferred delivery time, etc."></textarea>
+                    <div class="form-group full">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" name="notes" placeholder="Any special instructions or requests?"></textarea>
                     </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="cta-button primary">Submit Order</button>
-                        <p class="form-note">We'll contact you within 24 hours to confirm your order</p>
-                    </div>
+                    <button type="submit" class="submit-btn order-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Submit Order via WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="form-section bg-light">
+    <!-- CONTACT FORM SECTION -->
+    <section class="contact-form-section" id="contact-form">
         <div class="container">
             <div class="form-container">
                 <div class="form-header">
-                    <h2>Send Us a Message</h2>
-                    <p>Have questions? We're here to help!</p>
+                    <h2 class="form-title">Send Us a Message</h2>
+                    <p class="form-subtitle">Have questions? We're here to help!</p>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form id="contactForm" class="contact-form">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Your Name *</label>
-                            <input type="text" id="contactName" name="contactName" required>
+                            <input type="text" id="contactName" name="contactName" required placeholder="Enter your name">
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email Address *</label>
-                            <input type="email" id="contactEmail" name="contactEmail" required>
+                            <input type="email" id="contactEmail" name="contactEmail" required placeholder="your@email.com">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="contactPhone">Phone Number</label>
-                        <input type="tel" id="contactPhone" name="contactPhone">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactPhone">Phone Number</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" placeholder="e.g., 08012345678">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select subject</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                                <option value="Order Status">Order Status</option>
+                                <option value="Wholesale/Partnership">Wholesale/Partnership</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">-- Select Subject --</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="product">Product Information</option>
-                            <option value="refill">Refill Service</option>
-                            <option value="delivery">Delivery Questions</option>
-                            <option value="business">Business/Wholesale Inquiry</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="form-group full">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required placeholder="Type your message here..."></textarea>
                     </div>
-
-                    <div class="form-group">
-                        <label for="contactMessage">Your Message *</label>
-                        <textarea id="contactMessage" name="contactMessage" rows="6" required></textarea>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="cta-button secondary">Send Message</button>
-                    </div>
+                    <button type="submit" class="submit-btn contact-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Send via WhatsApp
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ SECTION -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title centered">Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>How does delivery work?</h3>
-                    <p>We offer free delivery in Lagos and Kano. For other locations, please contact us for delivery arrangements.</p>
+                    <h3 class="faq-question">How long does delivery take?</h3>
+                    <p class="faq-answer">Lagos: 24-48 hours. Other cities: 3-5 business days. We'll confirm delivery time when you place your order.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What payment methods do you accept?</h3>
-                    <p>We accept bank transfers, mobile money, and cash on delivery for Lagos and Kano orders.</p>
+                    <h3 class="faq-question">How do I pay?</h3>
+                    <p class="faq-answer">We accept bank transfer and payment on delivery (Lagos only). Payment details are shared via WhatsApp after you place your order.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>How long does a refill last?</h3>
-                    <p>A 1L refill typically lasts 2-4 weeks for a small household. The 3L family size lasts 6-8 weeks for average families.</p>
+                    <h3 class="faq-question">Is Gleam safe for sensitive skin?</h3>
+                    <p class="faq-answer">Yes! Our formula is dermatologist-friendly and non-toxic. It's designed to be tough on grease but gentle on hands.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Can I cancel my subscription?</h3>
-                    <p>Yes! There are no long-term commitments. You can pause or cancel your refill service anytime.</p>
+                    <h3 class="faq-question">How long does one bottle last?</h3>
+                    <p class="faq-answer">A 500ml bottle typically lasts 4-6 weeks for a family of 4, depending on usage.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you deliver nationwide?</h3>
+                    <p class="faq-answer">Yes! We deliver to all states in Nigeria. Free delivery available in Lagos for qualifying orders.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">How do refills work?</h3>
+                    <p class="faq-answer">Keep your original bottle and order our refill pouches. Simply pour the refill into your bottle - easy, eco-friendly, and saves you money!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Still Have Questions?</h2>
+            <p class="cta-subtitle">Chat with us directly on WhatsApp for instant support</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I%20have%20a%20question." class="cta-button white" target="_blank">
+                    Chat on WhatsApp
+                </a>
+                <a href="mailto:orangehomecareltd@gmail.com" class="cta-button outline">
+                    Send Email
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="footer-logo">
-                    <p class="footer-desc">Eco-friendly cleaning solutions for Nigerian homes and businesses.</p>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Orange Homecare" class="footer-logo-img">
+                    <p class="footer-tagline">Improving lives, one home at a time.</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
                         <li><a href="product.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#order">Order Now</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>Email: orangehomecareltd@gmail.com</li>
-                        <li>Phone: +234 813 456 6721</li>
-                        <li>Location: Lagos, Nigeria</li>
-                    </ul>
+                    <p>📧 orangehomecareltd@gmail.com</p>
+                    <p>📞 +234 813 456 6721</p>
+                    <p>📍 Lagos, Nigeria</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-text">
-                    Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria
-                </p>
+                <p>Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
+    <!-- WHATSAPP BUTTON -->
     <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I%20have%20a%20question." 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 32 32" class="whatsapp-icon">
-            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485-6.050 13.484-13.485 13.484zM21.739 18.13c-0.273-0.137-1.617-0.798-1.867-0.889-0.25-0.091-0.433-0.137-0.617 0.137s-0.708 0.889-0.867 1.073c-0.159 0.182-0.318 0.205-0.591 0.068s-1.155-0.426-2.199-1.357c-0.813-0.725-1.362-1.621-1.521-1.894s-0.017-0.421 0.120-0.557c0.123-0.123 0.273-0.318 0.409-0.478s0.182-0.273 0.273-0.455c0.091-0.182 0.045-0.341-0.023-0.478s-0.617-1.487-0.846-2.036c-0.223-0.534-0.45-0.462-0.617-0.471-0.159-0.008-0.341-0.010-0.524-0.010s-0.478 0.068-0.728 0.341c-0.25 0.273-0.955 0.936-0.955 2.283s0.978 2.648 1.114 2.83c0.137 0.182 1.921 2.933 4.652 4.112 0.649 0.280 1.156 0.448 1.551 0.573 0.652 0.207 1.245 0.178 1.715 0.108 0.524-0.078 1.617-0.661 1.845-1.299s0.228-1.185 0.159-1.299c-0.068-0.114-0.25-0.182-0.523-0.319z"/>
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 

@@ -1,196 +1,294 @@
-// Mobile menu toggle
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
+/* ===================================
+   ORANGE HOMECARE - JAVASCRIPT
+   =================================== */
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ===================================
+    // MOBILE MENU TOGGLE
+    // ===================================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
         
-        // Animate hamburger to X
-        const spans = menuToggle.querySelectorAll('span');
-        if (menuToggle.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        } else {
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
+        // Close menu when clicking on a nav link
+        const navLinkElements = navLinks.querySelectorAll('.nav-link');
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+    
+    // ===================================
+    // SMOOTH SCROLLING FOR ANCHOR LINKS
+    // ===================================
+    const scrollLinks = document.querySelectorAll('a[href^="#"], .scroll-link');
+    
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
             
-            // Reset hamburger animation
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            // Check if it's an anchor link
+            if (href.startsWith('#') && href.length > 1) {
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (mobileMenuBtn && navLinks) {
+                        mobileMenuBtn.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                    
+                    // Get navbar height for offset
+                    const navbar = document.querySelector('.navbar');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                    
+                    // Calculate position
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    // Smooth scroll
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
+    
+    // ===================================
+    // NAVBAR SCROLL EFFECT
+    // ===================================
+    const navbar = document.querySelector('.navbar');
+    
+    if (navbar) {
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
             
-            const spans = menuToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        }
-    });
-}
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Order Form Submission
-const orderForm = document.getElementById('orderForm');
-if (orderForm) {
-    orderForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            fullName: document.getElementById('fullName').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            plan: document.getElementById('plan').value,
-            city: document.getElementById('city').value,
-            quantity: document.getElementById('quantity').value,
-            address: document.getElementById('address').value,
-            message: document.getElementById('message').value
-        };
-
-        // Create WhatsApp message
-        const whatsappMessage = `*New Order from Website*
-        
-*Name:* ${formData.fullName}
-*Phone:* ${formData.phone}
-*Email:* ${formData.email}
-*Plan:* ${formData.plan}
-*City:* ${formData.city}
-*Quantity:* ${formData.quantity}
-*Delivery Address:* ${formData.address}
-*Additional Notes:* ${formData.message || 'None'}`;
-
-        const whatsappURL = `https://wa.me/2348134566721?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        // Show confirmation
-        alert('Thank you for your order! You will be redirected to WhatsApp to complete your order.');
-        
-        // Redirect to WhatsApp
-        window.open(whatsappURL, '_blank');
-        
-        // Reset form
-        orderForm.reset();
-    });
-}
-
-// Contact Form Submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            name: document.getElementById('contactName').value,
-            email: document.getElementById('contactEmail').value,
-            phone: document.getElementById('contactPhone').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('contactMessage').value
-        };
-
-        // Create WhatsApp message
-        const whatsappMessage = `*New Contact Message*
-        
-*Name:* ${formData.name}
-*Email:* ${formData.email}
-*Phone:* ${formData.phone || 'Not provided'}
-*Subject:* ${formData.subject}
-*Message:* ${formData.message}`;
-
-        const whatsappURL = `https://wa.me/2348134566721?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        // Show confirmation
-        alert('Thank you for contacting us! You will be redirected to WhatsApp.');
-        
-        // Redirect to WhatsApp
-        window.open(whatsappURL, '_blank');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
-
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe sections for animation on scroll
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        observer.observe(section);
-    });
-
-    // Immediately show hero section
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.opacity = '1';
-        hero.style.transform = 'translateY(0)';
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+            
+            lastScroll = currentScroll;
+        });
     }
-});
-
-// Add hover effect to cards
-const cards = document.querySelectorAll('.feature-card, .pricing-card, .value-card, .step-card');
-cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px)';
+    
+    // ===================================
+    // ORDER FORM SUBMISSION VIA WHATSAPP
+    // ===================================
+    const orderForm = document.getElementById('orderForm');
+    
+    if (orderForm) {
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const plan = document.getElementById('plan').value;
+            const city = document.getElementById('city').value.trim();
+            const quantity = document.getElementById('quantity').value;
+            const address = document.getElementById('address').value.trim();
+            const notes = document.getElementById('notes').value.trim();
+            
+            // Validate required fields
+            if (!fullName || !phone || !plan || !city || !address) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Build WhatsApp message
+            let message = `🛒 *NEW ORDER - GLEAM DISH WASH*\n\n`;
+            message += `*Customer Details:*\n`;
+            message += `👤 Name: ${fullName}\n`;
+            message += `📞 Phone: ${phone}\n`;
+            if (email) message += `📧 Email: ${email}\n`;
+            message += `\n*Order Details:*\n`;
+            message += `📦 Product: ${plan}\n`;
+            message += `🔢 Quantity: ${quantity}\n`;
+            message += `\n*Delivery Address:*\n`;
+            message += `🏙️ City: ${city}\n`;
+            message += `📍 Address: ${address}\n`;
+            if (notes) message += `\n📝 Notes: ${notes}\n`;
+            message += `\n---\n_Sent from Orange Homecare Website_`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // WhatsApp number
+            const whatsappNumber = '2348134566721';
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Show confirmation
+            alert('Great! Your order details will be sent to WhatsApp. Please confirm and send the message to complete your order.');
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+    
+    // ===================================
+    // CONTACT FORM SUBMISSION VIA WHATSAPP
+    // ===================================
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate required fields
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Build WhatsApp message
+            let whatsappMessage = `💬 *NEW MESSAGE - ORANGE HOMECARE*\n\n`;
+            whatsappMessage += `*From:*\n`;
+            whatsappMessage += `👤 Name: ${name}\n`;
+            whatsappMessage += `📧 Email: ${email}\n`;
+            if (phone) whatsappMessage += `📞 Phone: ${phone}\n`;
+            whatsappMessage += `\n*Subject:* ${subject}\n`;
+            whatsappMessage += `\n*Message:*\n${message}\n`;
+            whatsappMessage += `\n---\n_Sent from Orange Homecare Website_`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // WhatsApp number
+            const whatsappNumber = '2348134566721';
+            
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Show confirmation
+            alert('Your message will be sent to WhatsApp. Please confirm and send to reach us.');
+            
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+    
+    // ===================================
+    // SCROLL ANIMATIONS (FADE IN)
+    // ===================================
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Add fade-in class to elements
+    const fadeElements = document.querySelectorAll('.feature-card, .pricing-card, .testimonial, .value-card, .step-card, .faq-item, .about-block');
+    
+    fadeElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
     });
     
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
+    // ===================================
+    // HANDLE HASH ON PAGE LOAD
+    // ===================================
+    if (window.location.hash) {
+        setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    }
+    
+    // ===================================
+    // ACTIVE NAV LINK HIGHLIGHTING
+    // ===================================
+    const sections = document.querySelectorAll('section[id]');
+    
+    function highlightNavLink() {
+        const scrollPos = window.pageYOffset + 100;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}` || 
+                        link.getAttribute('href') === `index.html#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightNavLink);
+    
 });
 
-// Track button clicks (for analytics - optional)
-const ctaButtons = document.querySelectorAll('.cta-button');
-ctaButtons.forEach(button => {
-    button.addEventListener('click', function(e) {
-        console.log('CTA Button clicked:', this.textContent);
-        // Add analytics tracking here if needed
-    });
-});
+// ===================================
+// CSS FOR FADE IN ANIMATION (ADD TO STYLES)
+// ===================================
+// Add these styles via JavaScript
+const fadeStyles = document.createElement('style');
+fadeStyles.textContent = `
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
+document.head.appendChild(fadeStyles);

@@ -3,155 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Orange Homecare - Nigerian eco-friendly cleaning solutions manufacturer.">
+    <meta name="description" content="About Orange Homecare - Learn about our mission to improve Nigerian homes with eco-friendly cleaning solutions.">
     <title>About Us - Orange Homecare</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
-                    <span class="logo-text">Orange Homecare</span>
-                </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link active">About</a></li>
-                    <li><a href="product.html" class="nav-link">Products</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                    <li><a href="contact.html#order" class="nav-link cta-nav">Order Now</a></li>
-                </ul>
-                <div class="menu-toggle" id="menuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Orange Homecare Logo" class="logo-img">
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="product.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="contact.html#order" class="nav-link cta-nav">Order Now</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
         <div class="container">
             <h1 class="page-title">About Orange Homecare</h1>
-            <p class="page-subtitle">Proudly Made in Nigeria, Cleaning Homes with Care</p>
+            <p class="page-subtitle">Improving lives, one home at a time</p>
         </div>
     </section>
 
-    <!-- Our Story Section -->
-    <section class="content-section">
+    <!-- ABOUT CONTENT -->
+    <section class="about-page-section">
         <div class="container">
-            <div class="content-grid">
-                <div class="content-text">
-                    <h2 class="section-title-left">Our Story</h2>
-                    <p>Orange Homecare was born from a simple observation: Nigerian households deserve better cleaning solutions that are effective, affordable, and environmentally responsible.</p>
-                    <p>Founded in Lagos, we started with a mission to create products that work as hard as Nigerian families do—cutting through tough grease while being gentle on hands and kind to the planet.</p>
-                    <p>Today, Gleam Dish Wash is trusted by households and businesses across Lagos, Kano, and beyond, saving families money while reducing plastic waste through our innovative refill system.</p>
-                </div>
-                <div class="content-image">
-                    <div class="image-container">
-                        <img src="logo.png" alt="Orange Homecare" class="about-image">
-                    </div>
-                </div>
+            <div class="about-block">
+                <h2 class="about-subtitle">WHY We Exist</h2>
+                <p class="about-text"><strong>We believe that everything can be improved upon.</strong></p>
+                <p class="about-text">
+                    We believe that transformation doesn't start with grand gestures or government policies — it starts at home. We believe that the ordinary Nigerian deserves extraordinary solutions. We believe that when you improve the smallest unit of society — the home — you begin to transform an entire nation.
+                </p>
+                <p class="about-text">
+                    Too many Nigerian families are forced to choose between quality and affordability, between what works and what they can afford, between what's best for their homes and what's best for their wallets. We believe this choice shouldn't exist.
+                </p>
+                <p class="about-highlight">That's why Orange Homecare exists — to improve the lifestyle of the ordinary Nigerian, one home at a time.</p>
+            </div>
+
+            <div class="about-block">
+                <h2 class="about-subtitle">HOW We Do It</h2>
+                <p class="about-text">We challenge the status quo of the cleaning products industry in Nigeria.</p>
+                <p class="about-text">
+                    While others create expensive premium products for the few or low-quality alternatives for the many, we create high-performance, eco-friendly solutions that are accessible to everyone. We do this through:
+                </p>
+                <ul class="about-list">
+                    <li><span class="list-title">Innovation Without Compromise:</span> Developing proprietary formulations that deliver premium results at everyday prices</li>
+                    <li><span class="list-title">Sustainable Design:</span> Creating refillable systems that reduce waste while reducing costs</li>
+                    <li><span class="list-title">Direct Connection:</span> Building relationships with our customers through accessible WhatsApp ordering and retail partnerships</li>
+                    <li><span class="list-title">Relentless Quality:</span> Using safe, NAFDAC-certified ingredients that are tough on grease but gentle on hands and the environment</li>
+                </ul>
+            </div>
+
+            <div class="about-block">
+                <h2 class="about-subtitle">WHAT We Make</h2>
+                <p class="about-text"><strong>Gleam Dish Wash</strong> — Our flagship product is more than just a cleaning solution. It's proof that Nigerian households can have:</p>
+                <ul class="about-list check">
+                    <li>Powerful cleaning that cuts through the toughest grease</li>
+                    <li>Eco-friendly, refillable packaging that protects our planet</li>
+                    <li>Gentle, non-toxic ingredients safe for every family member</li>
+                    <li>Premium quality at prices that respect your budget</li>
+                    <li>NAFDAC certification for complete peace of mind</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Our Values Section -->
+    <!-- VALUES SECTION -->
     <section class="values-section">
         <div class="container">
-            <h2 class="section-title">Our Values</h2>
+            <h2 class="section-title centered">Our Core Values</h2>
             <div class="values-grid">
                 <div class="value-card">
-                    <div class="value-icon">🌍</div>
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>We constantly seek better ways to serve Nigerian homes.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
                     <h3>Sustainability</h3>
-                    <p>We believe in reducing waste through our refill system, helping Nigerian families save money while protecting our environment.</p>
+                    <p>We protect our environment through refillable systems.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">✨</div>
+                    <div class="value-icon">🤝</div>
+                    <h3>Accessibility</h3>
+                    <p>Quality products should be available to everyone.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✅</div>
                     <h3>Quality</h3>
-                    <p>NAFDAC-certified formulas that deliver superior cleaning power without harsh chemicals.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">💚</div>
-                    <h3>Affordability</h3>
-                    <p>Premium cleaning solutions at prices that make sense for Nigerian households and businesses.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🇳🇬</div>
-                    <h3>Nigerian Pride</h3>
-                    <p>Manufactured locally in Nigeria, supporting local employment and economic growth.</p>
+                    <p>We never compromise on the effectiveness of our products.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="content-section bg-light">
+    <!-- FOUNDER SECTION -->
+    <section class="founder-section">
         <div class="container">
-            <h2 class="section-title">Certified & Trusted</h2>
-            <div class="cert-content">
-                <p class="cert-text">Orange Homecare products are certified by the National Agency for Food and Drug Administration and Control (NAFDAC), ensuring safety, quality, and compliance with Nigerian standards.</p>
-                <p class="cert-text">Our eco-friendly formulas are tested and proven safe for use in homes, restaurants, and hotels across Nigeria.</p>
+            <div class="founder-content">
+                <div class="founder-text">
+                    <h2 class="about-subtitle">Our Founder</h2>
+                    <p class="about-text">
+                        Henry founded Orange Homecare in 2025 with a mechanical engineer's mind and a visionary's heart. He saw that improving society didn't require waiting for systemic change — it required creating better solutions for everyday problems.
+                    </p>
+                    <p class="about-text">
+                        Starting with something as simple as dish washing liquid, he set out to prove that ordinary Nigerians deserve — and can access — extraordinary quality.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- PROMISE SECTION -->
+    <section class="promise-section">
+        <div class="container">
+            <h2 class="about-subtitle centered">Our Promise</h2>
+            <p class="about-text centered">
+                Every bottle of Gleam Dish Wash is a commitment to you and to Nigeria. A commitment that says: your home matters. Your choices matter. Your family deserves better. And together, through thousands of improved homes, we can improve our society.
+            </p>
+            <p class="about-highlight centered large">Because when Nigerian homes thrive, Nigeria thrives.</p>
+        </div>
+    </section>
+
+    <!-- CERTIFICATION SECTION -->
+    <section class="certification-section">
+        <div class="container">
+            <div class="cert-content">
+                <div class="cert-badge">
+                    <span class="cert-icon">🏆</span>
+                    <h3>NAFDAC Certified</h3>
+                    <p>All our products meet the highest safety standards set by NAFDAC</p>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">🇳🇬</span>
+                    <h3>Made in Nigeria</h3>
+                    <p>Proudly manufactured in Lagos, supporting local employment</p>
+                </div>
+                <div class="cert-badge">
+                    <span class="cert-icon">♻️</span>
+                    <h3>Eco-Friendly</h3>
+                    <p>Our refillable system reduces plastic waste by up to 80%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title">Ready to Experience the Gleam Difference?</h2>
-            <p class="cta-subtitle">Join thousands of satisfied Nigerian customers</p>
+            <p class="cta-subtitle">Join thousands of Nigerian homes already using Gleam</p>
             <div class="cta-buttons">
                 <a href="contact.html#order" class="cta-button white">Order Now</a>
-                <a href="contact.html" class="cta-button outline">Contact Us</a>
+                <a href="product.html" class="cta-button outline">View Products</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <img src="logo.png" alt="Orange Homecare Logo" class="footer-logo">
-                    <p class="footer-desc">Eco-friendly cleaning solutions for Nigerian homes and businesses.</p>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Orange Homecare" class="footer-logo-img">
+                    <p class="footer-tagline">Improving lives, one home at a time.</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
                         <li><a href="product.html">Products</a></li>
                         <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html#order">Order Now</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li>Email: orangehomecareltd@gmail.com</li>
-                        <li>Phone: +234 813 456 6721</li>
-                        <li>Location: Lagos, Nigeria</li>
-                    </ul>
+                    <p>📧 orangehomecareltd@gmail.com</p>
+                    <p>📞 +234 813 456 6721</p>
+                    <p>📍 Lagos, Nigeria</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-text">
-                    Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria
-                </p>
+                <p>Orange Homecare © 2025 | NAFDAC Certified | Proudly Made in Nigeria</p>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I'm%20interested%20in%20learning%20more." 
-       class="whatsapp-float" 
-       target="_blank"
-       aria-label="Chat on WhatsApp">
-        <svg viewBox="0 0 32 32" class="whatsapp-icon">
-            <path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.924 0-7.435 6.050-13.485 13.485-13.485s13.485 6.050 13.485 13.485-6.050 13.484-13.485 13.484zM21.739 18.13c-0.273-0.137-1.617-0.798-1.867-0.889-0.25-0.091-0.433-0.137-0.617 0.137s-0.708 0.889-0.867 1.073c-0.159 0.182-0.318 0.205-0.591 0.068s-1.155-0.426-2.199-1.357c-0.813-0.725-1.362-1.621-1.521-1.894s-0.017-0.421 0.120-0.557c0.123-0.123 0.273-0.318 0.409-0.478s0.182-0.273 0.273-0.455c0.091-0.182 0.045-0.341-0.023-0.478s-0.617-1.487-0.846-2.036c-0.223-0.534-0.45-0.462-0.617-0.471-0.159-0.008-0.341-0.010-0.524-0.010s-0.478 0.068-0.728 0.341c-0.25 0.273-0.955 0.936-0.955 2.283s0.978 2.648 1.114 2.83c0.137 0.182 1.921 2.933 4.652 4.112 0.649 0.280 1.156 0.448 1.551 0.573 0.652 0.207 1.245 0.178 1.715 0.108 0.524-0.078 1.617-0.661 1.845-1.299s0.228-1.185 0.159-1.299c-0.068-0.114-0.25-0.182-0.523-0.319z"/>
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348134566721?text=Hi%20Orange%20Homecare!%20I'm%20interested%20in%20learning%20more%20about%20your%20company." 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
     </a>
 
