@@ -1,7 +1,7 @@
 /* =========================================================
    Orange Homecare — site script
-   Change prices ONLY here. Cards, buttons, the order form
-   and every WhatsApp message read from this table.
+   Prices for the ORDER FORM live in PLANS below.
+   The pricing cards are plain HTML in index.html and product.html.
    ========================================================= */
 const WHATSAPP_NUMBER = '2348134566721';
 const YEARLY_DISCOUNT = 0.10; // 10% off when paying for 12 months upfront
@@ -57,74 +57,6 @@ function openWhatsApp(url) {
         window.location.href = url; // pop-up genuinely blocked: open in same tab
     }
 }
-
-/* ---------- WhatsApp message for a plan button ---------- */
-function planMessage(planKey, billing) {
-    const plan = PLANS[planKey];
-    const p = planPricing(planKey, billing);
-    const priceLine = billing === 'yearly'
-        ? `${p.label} (instead of ${naira(p.regular)} — I save ${naira(p.saving)})`
-        : p.label;
-
-    return [
-        'Hello Orange Homecare!',
-        "I'd like to order Gleam Dish Wash.",
-        '',
-        `*Plan:* ${plan.name} — ${plan.size} monthly refill`,
-        `*Billing:* ${billingText(billing)}`,
-        `*Price:* ${priceLine}`,
-        '',
-        '*My name:* ',
-        '*Delivery address:* '
-    ].join('\n');
-}
-
-/* ---------- Pricing cards + billing toggle ---------- */
-let currentBilling = 'monthly';
-
-function renderPricing() {
-    document.querySelectorAll('.pricing-card[data-plan]').forEach((card) => {
-        const key = card.dataset.plan;
-        if (!PLANS[key]) return;
-        const p = planPricing(key, currentBilling);
-        const yearlyP = planPricing(key, 'yearly');
-
-        const amount = card.querySelector('.price-amount');
-        const period = card.querySelector('.pricing-period');
-        const note = card.querySelector('.price-note');
-        if (amount) amount.textContent = naira(p.amount);
-        if (period) period.textContent = p.period;
-
-        if (note) {
-            note.innerHTML = currentBilling === 'yearly'
-                ? `<span class="was">${naira(p.regular)}</span>Works out to ${naira(p.perMonth)}/month<br><span class="saving">You save ${naira(p.saving)}</span>`
-                : `or ${naira(yearlyP.amount)}/year when you pay yearly<br><span class="saving">Save ${naira(yearlyP.saving)}</span>`;
-        }
-    });
-
-    document.querySelectorAll('.plan-cta[data-plan]').forEach((btn) => {
-        const key = btn.dataset.plan;
-        if (!PLANS[key]) return;
-        const p = planPricing(key, currentBilling);
-        const value = btn.querySelector('.cta-value');
-        if (value) value.textContent = currentBilling === 'yearly' ? `${p.label} · save 10%` : p.label;
-        btn.href = whatsappLink(planMessage(key, currentBilling));
-        btn.setAttribute('aria-label', `Order ${PLANS[key].name} plan, ${p.label}, on WhatsApp`);
-    });
-
-    document.querySelectorAll('.billing-option').forEach((opt) => {
-        opt.setAttribute('aria-pressed', String(opt.dataset.billing === currentBilling));
-    });
-}
-
-document.querySelectorAll('.billing-option').forEach((opt) => {
-    opt.addEventListener('click', () => {
-        currentBilling = opt.dataset.billing === 'yearly' ? 'yearly' : 'monthly';
-        renderPricing();
-    });
-});
-
-renderPricing();
 
 /* ---------- Order form (contact page) ---------- */
 const orderForm = document.getElementById('orderForm');
