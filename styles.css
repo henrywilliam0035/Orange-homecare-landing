@@ -918,7 +918,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; }
 }
 
 /* Long email address: one solid tap target */
-.contact-info-card a { display: inline-block; max-width: 100%; }
+.contact-info-card a { display: inline-block; max-width: 100%; word-break: normal; overflow-wrap: normal; }
 
 /* ===== Monthly / yearly switch (pure HTML + CSS, no script needed) ===== */
 .billing-radio {
@@ -943,3 +943,27 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; }
 #billing-yearly:checked ~ .pricing-grid .show-yearly { display: block; }
 #billing-yearly:checked ~ .pricing-grid .plan-cta.show-yearly { display: inline-flex; }
 #billing-yearly:checked ~ .pricing-grid .show-monthly { display: none; }
+
+/* ===== Phone menu: opens with HTML + CSS alone (script only adds auto-close) ===== */
+.nav-toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+.menu-toggle { -webkit-tap-highlight-color: transparent; user-select: none; }
+.menu-toggle:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; border-radius: 6px; }
+
+@media (max-width: 768px) {
+    .nav-toggle-checkbox:checked ~ .nav-menu { max-height: 520px; opacity: 1; padding: 0.6rem 0 1rem; }
+    .nav-toggle-checkbox:checked ~ .menu-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .nav-toggle-checkbox:checked ~ .menu-toggle span:nth-child(2) { opacity: 0; }
+    .nav-toggle-checkbox:checked ~ .menu-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* Distributor button in the orange band */
+.distributor-cta { padding: 12px 26px; line-height: 1.25; }
+.distributor-cta .cta-label { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.distributor-cta .cta-main { font-size: 1.02rem; }
+.distributor-cta .cta-value { font-size: 0.88rem; font-weight: 600; opacity: 0.95; }

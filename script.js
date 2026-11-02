@@ -157,26 +157,39 @@ if (contactForm) {
 }
 
 /* ---------- Mobile menu ---------- */
-// Find the menu by ID, falling back to class names, so every page works.
-const menuToggle = document.getElementById('menuToggle') || document.querySelector('.menu-toggle');
-const navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+// The menu opens and closes on its own via a hidden checkbox (pure HTML/CSS).
+// This script only adds: close after tapping a link, tapping outside, or Escape,
+// plus keyboard support and screen-reader state.
+const navCheckbox = document.getElementById('nav-toggle');
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
 
-function setMenu(open) {
-    navMenu.classList.toggle('active', open);
-    menuToggle.classList.toggle('active', open);
+function syncMenuState() {
+    if (!navCheckbox || !menuToggle) return;
+    const open = navCheckbox.checked;
     menuToggle.setAttribute('aria-expanded', String(open));
     menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 }
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        setMenu(!navMenu.classList.contains('active'));
+function setMenu(open) {
+    if (!navCheckbox) return;
+    navCheckbox.checked = open;
+    syncMenuState();
+}
+
+if (navCheckbox && menuToggle && navMenu) {
+    navCheckbox.addEventListener('change', syncMenuState);
+    menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setMenu(!navCheckbox.checked);
+        }
     });
     navMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
     document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) setMenu(false);
+        // Ignore clicks on the menu, the ☰ label, and the hidden checkbox the label toggles
+        if (navMenu.contains(e.target) || menuToggle.contains(e.target) || e.target === navCheckbox) return;
+        setMenu(false);
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') setMenu(false);
